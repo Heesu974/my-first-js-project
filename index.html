@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Momentum APP</title>
 </head>
 
@@ -17,17 +17,22 @@
     <!-- input의 유효성 검사를 위해서는 input이 form안에 들어있어야 한다. -->
     <!-- form이 submit되면, (button 또는 input에 의해)
     브라우저가 새로고침하지 않고 input.value를 저장하도록.  -->
+
+    <h2 id="clock">00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
+    <div id="quote">
+        <span></span>
+        <span></span>
+    </div>
 
 
 
-    <!-- <script src="4_0.js"></script> -->
-    <!-- <script src="4_1.js
-    "></script> -->
-    <!-- <script src="4_2.js"></script> -->
-    <!-- <script src="4_4.js"></script> -->
-    <!-- <script src="4_5.js"></script> -->
-    <script src="4_6.js"></script>
+
+
+    <script src="greetings/4_6.js"></script>
+    <script src="clock/clock.js"></script>
+    <script src="random/quotes.js"></script>
+    <script src="random/background.js"></script>
 </body>
 
 </html>
