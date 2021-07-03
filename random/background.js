@@ -5,10 +5,10 @@ const images = [
 ]
 const chosenImg = images[Math.floor(Math.random() * images.length)];
 
-Math.random()은 0 과 1사이에서만 작동.
+// Math.random()은 0 과 1사이에서만 작동.
 const bgImg = document.createElement('img');
 
 bgImg.src = `img/${chosenImg}`;
-console.log(bgImg);
+
 
 document.body.appendChild(bgImg);
