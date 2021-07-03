@@ -4,10 +4,7 @@ const toDoList = document.getElementById('todo-list');
 const TODOSKEYNAME = 'todosKeyName';
 let toDos = [];
 
-//새로 고침할 때, toDos 가 localStorage에는 남아 있지만, 화면에는 나타나지 않는 문제점 해결. 
 
-// todo List localStorage에 저장하기 
-// localstage에는 string만 저장할 수 있다.
 function saveToDos() {
     localStorage.setItem(TODOSKEYNAME, JSON.stringify(toDos));
 
@@ -19,11 +16,8 @@ function deleteTodo(event) {
 
     const li = event.target.parentElement;
     li.remove();
-    console.log(typeof li.id)
-
     // 많은 버튼 중에 클릭한 버튼이 무엇일까 ?
-    toDos = toDos.filter((item) => item.id !== parseInt(li.id))
-    saveToDos();
+
 
 
 }
@@ -76,10 +70,15 @@ if (savedToDos !== null) {
     toDos = parsedToDos;
     parsedToDos.forEach((paintToDo))
 }
-// 브라우져 화면에서 버튼을 눌러 lifmf 삭제해도, 저장된 localStorage에는 여전히 저장되어 있기때문에,
-// 브라우저 새로고침 시, 브라우져에서 지웠던 item 들이 다시 생기는 문제 
+// forEach 함수는 paintToDo를 parsedToDos 배열의 요소마다 실행한다.
+// item을 지우는게 아니라 지우고 싶은 item을 제외한 array를 새로 생성한다.
+// function sexyfilter() {
 
-// localstorage는 toDos array를 "복사"해두는 곳이다.외장하드처럼.
+// }
+// [1, 2, 3, 4].filter(sexyfilter) 일때,
+//     js는 sexyfilter(1)
+// sexyfilter(2)
+// 이렇게 각각의 item에서 각각 한 번씩 작동한다.
+// filter함수는 무조건 true 값만 보여준다.
 
-// array에 저장되는 item각각에 고유의 id를 부여해서, 
-// 선택된 아이템이 무엇인지 확인가능하도록 만드는 작업이 필요하다.
+// ==array 의 item을 유지하고 싶으면, true를 리턴해야된다.
